@@ -1,0 +1,79 @@
+<!DOCTYPE QPH>
+<QPH sourcelanguage="en_US" language="ru_RU">
+<phrase>
+    <source>Game Detection</source>
+    <target>Обнаружение игры</target>
+</phrase>
+<phrase>
+    <source>Modify Options</source>
+    <target>Настройки изменения</target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target>Настройки</target>
+</phrase>
+<phrase>
+    <source>About</source>
+    <target>О</target>
+</phrase>
+<phrase>
+    <source>Language</source>
+    <target>язык</target>
+</phrase>
+<phrase>
+    <source>About this tool</source>
+    <target>Об этом инструменте</target>
+</phrase>
+<phrase>
+    <source>found</source>
+    <target>Найден</target>
+</phrase>
+<phrase>
+    <source>not found</source>
+    <target>Не найден</target>
+</phrase>
+<phrase>
+    <source>Disable</source>
+    <target>Запрещать</target>
+</phrase>
+<phrase>
+    <source>Enable</source>
+    <target>Активировать</target>
+</phrase>
+<phrase>
+    <source>100% unlock alternative menu</source>
+    <target>100% разблокировать альтернативное меню</target>
+</phrase>
+<phrase>
+    <source>Dairy Scandal invincibility and instant kill</source>
+    <target>Молочный скандал: непобедим и мгновенно убиваем</target>
+</phrase>
+<phrase>
+    <source>Decrease the number of Mita&apos;s snowballs</source>
+    <target>Уменьшено количество снежков в Мите</target>
+</phrase>
+<phrase>
+    <source>Lock the score of Cap-wearing Mita in Dance Floor</source>
+    <target>Заблокировать счёт Миты Кепочки на Танцполе</target>
+</phrase>
+<phrase>
+    <source>Hetoor health lock</source>
+    <target>Блокировка здоровья</target>
+</phrase>
+<phrase>
+    <source>Warning</source>
+    <target>Предупреждение</target>
+</phrase>
+<phrase>
+    <source>Restore failed</source>
+    <target>Восстановление не удалось</target>
+</phrase>
+<phrase>
+    <source>Apply failed</source>
+    <target>Применение не удалось</target>
+</phrase>
+<phrase>
+    <source>MainWindow</source>
+    <target>MisideFull Trainer</target>
+</phrase>
+</QPH>
