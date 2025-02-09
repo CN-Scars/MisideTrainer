@@ -41,6 +41,12 @@ bool TrainerManager::useTrainer(TrainerType type, QPushButton *button)
     return onTrainerButtonClicked(trainerSelector[type], button);
 }
 
+void TrainerManager::resetTrainers()
+{
+    for (const auto &trainer : std::as_const(trainerSelector))
+        trainer->setModificationState(false);
+}
+
 bool TrainerManager::onTrainerButtonClicked(Trainer *trainer, QPushButton *button)
 {
     if (trainer->modificationIsEnabled())

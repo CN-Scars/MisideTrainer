@@ -68,8 +68,10 @@ private:
     void initAboutAction();
     void initTextLabels();
     void switchLanguage(const QString &langCode);
+    void handleProcessAndModuleStateChange();
     void updatePictureLabel();
     void updatePushButtonText();
+    void resetPushButtonState();
     void createAboutInfoSection(QDialog *dialog, QVBoxLayout *sectionLayout, const WebsiteInfo &info);
 };
 #endif // MAINWINDOW_H

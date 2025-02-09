@@ -24,15 +24,13 @@ MainWindow::~MainWindow()
 void MainWindow::onProcessFoundChanged(bool found)
 {
     processFound = found;
-    ui->processStatusLabel->setText(QString("MiSideFull.exe %1").arg(found ? tr("found") : tr("not found")));
-    updatePictureLabel();
+    handleProcessAndModuleStateChange();
 }
 
 void MainWindow::onModuleFoundChanged(bool found)
 {
     moduleFound = found;
-    ui->moduleStatusLabel->setText(QString("GameAssembly.dll %1").arg(found ? tr("found") : tr("not found")));
-    updatePictureLabel();
+    handleProcessAndModuleStateChange();
 }
 
 void MainWindow::onAlternativeMenuUnlockPushButtonClicked()
@@ -253,6 +251,20 @@ void MainWindow::switchLanguage(const QString &langCode)
     updatePushButtonText();
 }
 
+void MainWindow::handleProcessAndModuleStateChange()
+{
+    ui->processStatusLabel->setText(QString("MiSideFull.exe %1").arg(processFound ? tr("found") : tr("not found")));
+    ui->moduleStatusLabel->setText(QString("GameAssembly.dll %1").arg(moduleFound ? tr("found") : tr("not found")));
+
+    updatePictureLabel();
+
+    if (!processFound or !moduleFound)
+    {
+        trainerManager->resetTrainers();
+        resetPushButtonState();
+    }
+}
+
 void MainWindow::updatePictureLabel()
 {
     const QString picturePath = processFound && moduleFound ? ":/images/horror_mita_open_eyes.png" : ":/images/horror_mita_close_eyes.png";
@@ -272,6 +284,13 @@ void MainWindow::updatePushButtonText()
         bool enabled = it.value();
         pushButton->setText(enabled ? tr("Disable") : tr("Enable"));
     }
+}
+
+void MainWindow::resetPushButtonState()
+{
+    std::for_each(pushButtonEnabled.begin(), pushButtonEnabled.end(), [](bool &value)
+                  { value = false; });
+    updatePushButtonText();
 }
 
 void MainWindow::createAboutInfoSection(QDialog *dialog, QVBoxLayout *sectionLayout, const WebsiteInfo &info)

@@ -38,6 +38,7 @@ public:
 
     void setUp(MainWindow *mainWindow);
     bool useTrainer(TrainerType type, QPushButton *button); // 使用指定修改器
+    void resetTrainers();                                   // 重置所有修改器
 
 private:
     MainWindow *mainWindow;
