@@ -110,7 +110,7 @@
     <message>
         <location filename="../../ui/mainwindow.cpp" line="257"/>
         <source>Space Car: Always first place</source>
-        <translation>Space Car: 总是保持第一名</translation>
+        <translation>Space Car：总是保持第一名</translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.cpp" line="258"/>

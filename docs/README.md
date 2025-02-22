@@ -9,10 +9,14 @@ Miside Trainer is a game modifier for the game [MiSide](https://store.steampower
 | No. | Feature           | Stability     |
 |-----|-------------------|---------------|
 | 1   | 100% unlock alternative menu (also alternative menu music) | ✅            |
-| 2   | Dairy Scandal invincibility and instant kill | ⚠️ (You might get one-shot by your opponent, so try to finish quickly!) |
-| 3   | Decrease the number of Mita's snowballs | ✅           |
-| 4   | Lock the score of Cap-wearing Mita in Dance Floor | ✅            |
-| 5   | Hetoor health lock | ✅            |
+| 2 | Game console invincible | ✅ |
+| 3   | Dairy Scandal invincibility and instant kill | ⚠️ (You might get one-shot by your opponent, so try to finish quickly!) |
+| 4   | Decrease the number of Mita's snowballs | ✅           |
+| 5 | Space Car: Always first place | ✅ |
+| 6 | Space Car: Boss never hurts you | ✅ |
+| 7   | Lock the score of Cap-wearing Mita in Dance Floor | ✅            |
+| 8   | Hetoor health lock | ✅            |
+| 9 | Quad Rangle: No collision | ✅ |
 
 > **Stability Explanation**:
 > 
