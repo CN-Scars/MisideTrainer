@@ -76,4 +76,20 @@
     <source>MainWindow</source>
     <target>MisideFull Trainer</target>
 </phrase>
+<phrase>
+    <source>Game console invincible</source>
+    <target>Игровая консоль непобедима</target>
+</phrase>
+<phrase>
+    <source>Space Car: Always first place</source>
+    <target>Space Car: Всегда первое место</target>
+</phrase>
+<phrase>
+    <source>Space Car: Boss never hurts you</source>
+    <target>Space Car: Босс никогда не причинит тебе вреда</target>
+</phrase>
+<phrase>
+    <source>Quad Rangle: No collision</source>
+    <target>КВАДРА-ЛАЙНЕР: Нет столкновения</target>
+</phrase>
 </QPH>

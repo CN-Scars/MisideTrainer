@@ -76,4 +76,20 @@
     <source>MainWindow</source>
     <target>MisideFull Trainer</target>
 </phrase>
+<phrase>
+    <source>Game console invincible</source>
+    <target>游戏机无敌</target>
+</phrase>
+<phrase>
+    <source>Space Car: Always first place</source>
+    <target>Space Car：总是保持第一名</target>
+</phrase>
+<phrase>
+    <source>Space Car: Boss never hurts you</source>
+    <target>Space Car：Boss不会对你造成伤害</target>
+</phrase>
+<phrase>
+    <source>Quad Rangle: No collision</source>
+    <target>四边形小游戏：不产生碰撞</target>
+</phrase>
 </QPH>
