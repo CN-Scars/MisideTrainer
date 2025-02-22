@@ -8,6 +8,7 @@
 #include "trainer/alternativemenutrainer.h"
 #include "trainer/dairyscandaltrainer.h"
 #include "trainer/dancefloortrainer.h"
+#include "trainer/gameconsoletrainer.h"
 #include "trainer/hetoortrainer.h"
 #include "trainer/penguinpilestrainer.h"
 #include "utils/processmonitor.h"
@@ -21,6 +22,7 @@ class MainWindow;
 
 enum class TrainerType
 {
+    GameConsole,
     AlternativeMenu,
     DairyScandal,
     PenguinPiles,
@@ -43,6 +45,7 @@ public:
 private:
     MainWindow *mainWindow;
     ProcessMonitor *monitor;
+    GameConsoleTrainer *gameConsoleTrainer;
     AlternativeMenuTrainer *alternativeMenuTrainer;
     DairyScandalTrainer *dairyScandalTrainer;
     PenguinPilesTrainer *penguinPilesTrainer;

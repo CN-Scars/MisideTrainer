@@ -38,6 +38,8 @@ set(PROJECT_SOURCES
     trainer/dairyscandaltrainer.h
     trainer/dancefloortrainer.cpp
     trainer/dancefloortrainer.h
+    trainer/gameconsoletrainer.cpp
+    trainer/gameconsoletrainer.h
     trainer/hetoortrainer.cpp
     trainer/hetoortrainer.h
     trainer/penguinpilestrainer.cpp

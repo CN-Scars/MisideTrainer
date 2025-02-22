@@ -33,6 +33,17 @@ void MainWindow::onModuleFoundChanged(bool found)
     handleProcessAndModuleStateChange();
 }
 
+void MainWindow::onGameConsoleInvincibilityPushButtonClicked()
+{
+    QPushButton *button = qobject_cast<QPushButton *>(sender());
+    bool success = trainerManager->useTrainer(TrainerType::GameConsole, button);
+    if (success)
+    {
+        pushButtonEnabled[button] = !pushButtonEnabled[button];
+        button->setText(pushButtonEnabled[button] ? tr("Disable") : tr("Enable"));
+    }
+}
+
 void MainWindow::onAlternativeMenuUnlockPushButtonClicked()
 {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
@@ -93,6 +104,7 @@ void MainWindow::initPushButton()
     initPushButtonConnections();
 
     pushButtonEnabled = {
+        {ui->gameConsoleInvincibilityPushButton, false},
         {ui->alternativeMenuUnlockPushButton, false},
         {ui->dairyScandalInvincibilityAndInstantKillPushButton, false},
         {ui->decreaseMitaSnowballsPushButton, false},
@@ -104,6 +116,7 @@ void MainWindow::initPushButton()
 
 void MainWindow::initPushButtonConnections()
 {
+    connect(ui->gameConsoleInvincibilityPushButton, &QPushButton::clicked, this, &MainWindow::onGameConsoleInvincibilityPushButtonClicked);
     connect(ui->alternativeMenuUnlockPushButton, &QPushButton::clicked, this, &MainWindow::onAlternativeMenuUnlockPushButtonClicked);
     connect(ui->dairyScandalInvincibilityAndInstantKillPushButton, &QPushButton::clicked, this, &MainWindow::onDairyScandalInvincibilityAndInstantKillPushButtonClicked);
     connect(ui->decreaseMitaSnowballsPushButton, &QPushButton::clicked, this, &MainWindow::onDecreaseMitaSnowballsPushButtonClicked);
@@ -197,6 +210,7 @@ void MainWindow::initTextLabels()
     QHash<QLabel *, QString> labels = {
         {ui->processStatusLabel, "MiSideFull.exe %1"},
         {ui->moduleStatusLabel, "GameAssembly.dll %1"},
+        {ui->gameConsoleInvincibilityLabel, tr("Game console invincible")},
         {ui->alternativeMenuUnlockLabel, tr("100% unlock alternative menu")},
         {ui->dairyScandalInvincibilityAndInstantKillLabel, tr("Dairy Scandal invincibility and instant kill")},
         {ui->decreaseMitaSnowballsLabel, tr("Decrease the number of Mita's snowballs")},

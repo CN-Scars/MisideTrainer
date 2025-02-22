@@ -23,12 +23,14 @@ void TrainerManager::setUp(MainWindow *mainWindow)
 
     monitor->startMonitoring();
 
+    gameConsoleTrainer = new GameConsoleTrainer(monitor);
     alternativeMenuTrainer = new AlternativeMenuTrainer(monitor);
     dairyScandalTrainer = new DairyScandalTrainer(monitor);
     penguinPilesTrainer = new PenguinPilesTrainer(monitor);
     danceFloorTrainer = new DanceFloorTrainer(monitor);
     hetoorTrainer = new HetoorTrainer(monitor);
 
+    trainerSelector[TrainerType::GameConsole] = gameConsoleTrainer;
     trainerSelector[TrainerType::AlternativeMenu] = alternativeMenuTrainer;
     trainerSelector[TrainerType::DairyScandal] = dairyScandalTrainer;
     trainerSelector[TrainerType::PenguinPiles] = penguinPilesTrainer;

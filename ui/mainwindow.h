@@ -44,6 +44,8 @@ public:
     void onModuleFoundChanged(bool found);
 
 private slots:
+    void onGameConsoleInvincibilityPushButtonClicked();
+
     void onAlternativeMenuUnlockPushButtonClicked();
 
     void onDairyScandalInvincibilityAndInstantKillPushButtonClicked();
