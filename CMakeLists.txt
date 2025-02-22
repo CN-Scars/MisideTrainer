@@ -44,6 +44,8 @@ set(PROJECT_SOURCES
     trainer/hetoortrainer.h
     trainer/penguinpilestrainer.cpp
     trainer/penguinpilestrainer.h
+    trainer/spacecartrainer.cpp
+    trainer/spacecartrainer.h
     trainer/trainer.cpp
     trainer/trainer.h
     ui/mainwindow.cpp

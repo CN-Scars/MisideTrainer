@@ -33,10 +33,10 @@ void MainWindow::onModuleFoundChanged(bool found)
     handleProcessAndModuleStateChange();
 }
 
-void MainWindow::onGameConsoleInvincibilityPushButtonClicked()
+void MainWindow::onAlternativeMenuUnlockPushButtonClicked()
 {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
-    bool success = trainerManager->useTrainer(TrainerType::GameConsole, button);
+    bool success = trainerManager->useTrainer(TrainerType::AlternativeMenu, button);
     if (success)
     {
         pushButtonEnabled[button] = !pushButtonEnabled[button];
@@ -44,10 +44,10 @@ void MainWindow::onGameConsoleInvincibilityPushButtonClicked()
     }
 }
 
-void MainWindow::onAlternativeMenuUnlockPushButtonClicked()
+void MainWindow::onGameConsoleInvincibilityPushButtonClicked()
 {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
-    bool success = trainerManager->useTrainer(TrainerType::AlternativeMenu, button);
+    bool success = trainerManager->useTrainer(TrainerType::GameConsole, button);
     if (success)
     {
         pushButtonEnabled[button] = !pushButtonEnabled[button];
@@ -88,6 +88,17 @@ void MainWindow::onLockScoreOfMitaInDanceFloorPushButtonClicked()
     }
 }
 
+void MainWindow::onSpaceCarAlwaysFirstPlacePushButtonClicked()
+{
+    QPushButton *button = qobject_cast<QPushButton *>(sender());
+    bool success = trainerManager->useTrainer(TrainerType::SpaceCar, button);
+    if (success)
+    {
+        pushButtonEnabled[button] = !pushButtonEnabled[button];
+        button->setText(pushButtonEnabled[button] ? tr("Disable") : tr("Enable"));
+    }
+}
+
 void MainWindow::onHetoorHealthLockPushButtonClicked()
 {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
@@ -104,11 +115,12 @@ void MainWindow::initPushButton()
     initPushButtonConnections();
 
     pushButtonEnabled = {
-        {ui->gameConsoleInvincibilityPushButton, false},
         {ui->alternativeMenuUnlockPushButton, false},
+        {ui->gameConsoleInvincibilityPushButton, false},
         {ui->dairyScandalInvincibilityAndInstantKillPushButton, false},
         {ui->decreaseMitaSnowballsPushButton, false},
         {ui->lockScoreOfMitaInDanceFloorPushButton, false},
+        {ui->spaceCarAlwaysFirstPlacePushButton, false},
         {ui->hetoorHealthLockPushButton, false}};
 
     updatePushButtonText();
@@ -116,11 +128,12 @@ void MainWindow::initPushButton()
 
 void MainWindow::initPushButtonConnections()
 {
-    connect(ui->gameConsoleInvincibilityPushButton, &QPushButton::clicked, this, &MainWindow::onGameConsoleInvincibilityPushButtonClicked);
     connect(ui->alternativeMenuUnlockPushButton, &QPushButton::clicked, this, &MainWindow::onAlternativeMenuUnlockPushButtonClicked);
+    connect(ui->gameConsoleInvincibilityPushButton, &QPushButton::clicked, this, &MainWindow::onGameConsoleInvincibilityPushButtonClicked);
     connect(ui->dairyScandalInvincibilityAndInstantKillPushButton, &QPushButton::clicked, this, &MainWindow::onDairyScandalInvincibilityAndInstantKillPushButtonClicked);
     connect(ui->decreaseMitaSnowballsPushButton, &QPushButton::clicked, this, &MainWindow::onDecreaseMitaSnowballsPushButtonClicked);
     connect(ui->lockScoreOfMitaInDanceFloorPushButton, &QPushButton::clicked, this, &MainWindow::onLockScoreOfMitaInDanceFloorPushButtonClicked);
+    connect(ui->spaceCarAlwaysFirstPlacePushButton, &QPushButton::clicked, this, &MainWindow::onSpaceCarAlwaysFirstPlacePushButtonClicked);
     connect(ui->hetoorHealthLockPushButton, &QPushButton::clicked, this, &MainWindow::onHetoorHealthLockPushButtonClicked);
 }
 
@@ -210,11 +223,11 @@ void MainWindow::initTextLabels()
     QHash<QLabel *, QString> labels = {
         {ui->processStatusLabel, "MiSideFull.exe %1"},
         {ui->moduleStatusLabel, "GameAssembly.dll %1"},
-        {ui->gameConsoleInvincibilityLabel, tr("Game console invincible")},
         {ui->alternativeMenuUnlockLabel, tr("100% unlock alternative menu")},
-        {ui->dairyScandalInvincibilityAndInstantKillLabel, tr("Dairy Scandal invincibility and instant kill")},
+        {ui->gameConsoleInvincibilityLabel, tr("Game console invincible")},{ui->dairyScandalInvincibilityAndInstantKillLabel, tr("Dairy Scandal invincibility and instant kill")},
         {ui->decreaseMitaSnowballsLabel, tr("Decrease the number of Mita's snowballs")},
         {ui->lockScoreOfMitaInDanceFloorLabel, tr("Lock the score of Cap-wearing Mita in Dance Floor")},
+        {ui->spaceCarAlwaysFirstPlaceLabel, tr("Space Car: Always first place")},
         {ui->hetoorHealthLockLabel, tr("Hetoor health lock")}};
 
     for (auto it = labels.begin(); it != labels.end(); ++it)

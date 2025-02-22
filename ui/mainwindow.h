@@ -44,15 +44,17 @@ public:
     void onModuleFoundChanged(bool found);
 
 private slots:
-    void onGameConsoleInvincibilityPushButtonClicked();
-
     void onAlternativeMenuUnlockPushButtonClicked();
+
+    void onGameConsoleInvincibilityPushButtonClicked();
 
     void onDairyScandalInvincibilityAndInstantKillPushButtonClicked();
 
     void onDecreaseMitaSnowballsPushButtonClicked();
 
     void onLockScoreOfMitaInDanceFloorPushButtonClicked();
+
+    void onSpaceCarAlwaysFirstPlacePushButtonClicked();
 
     void onHetoorHealthLockPushButtonClicked();
 

@@ -9,8 +9,9 @@
 #include "trainer/dairyscandaltrainer.h"
 #include "trainer/dancefloortrainer.h"
 #include "trainer/gameconsoletrainer.h"
-#include "trainer/hetoortrainer.h"
 #include "trainer/penguinpilestrainer.h"
+#include "trainer/hetoortrainer.h"
+#include "trainer/spacecartrainer.h"
 #include "utils/processmonitor.h"
 
 #include <QMap>
@@ -22,10 +23,11 @@ class MainWindow;
 
 enum class TrainerType
 {
-    GameConsole,
     AlternativeMenu,
+    GameConsole,
     DairyScandal,
     PenguinPiles,
+    SpaceCar,
     DanceFloor,
     Hetoor
 };
@@ -45,10 +47,11 @@ public:
 private:
     MainWindow *mainWindow;
     ProcessMonitor *monitor;
-    GameConsoleTrainer *gameConsoleTrainer;
     AlternativeMenuTrainer *alternativeMenuTrainer;
+    GameConsoleTrainer *gameConsoleTrainer;
     DairyScandalTrainer *dairyScandalTrainer;
     PenguinPilesTrainer *penguinPilesTrainer;
+    SpaceCarTrainer *spaceCarTrainer;
     DanceFloorTrainer *danceFloorTrainer;
     HetoorTrainer *hetoorTrainer;
     QMap<TrainerType, Trainer *> trainerSelector;
