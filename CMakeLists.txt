@@ -45,6 +45,8 @@ set(PROJECT_SOURCES
     trainer/penguinpilestrainer.cpp
     trainer/penguinpilestrainer.h
     trainer/spacecartrainer.cpp
+    trainer/spacecarbosstrainer.cpp
+    trainer/spacecarbosstrainer.h
     trainer/spacecartrainer.h
     trainer/trainer.cpp
     trainer/trainer.h

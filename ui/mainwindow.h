@@ -56,6 +56,8 @@ private slots:
 
     void onSpaceCarAlwaysFirstPlacePushButtonClicked();
 
+    void onSpaceCarBossNeverHurtsYouPushButtonClicked();
+
     void onHetoorHealthLockPushButtonClicked();
 
 private:

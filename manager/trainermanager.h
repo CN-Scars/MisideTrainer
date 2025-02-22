@@ -11,6 +11,7 @@
 #include "trainer/gameconsoletrainer.h"
 #include "trainer/penguinpilestrainer.h"
 #include "trainer/hetoortrainer.h"
+#include "trainer/spacecarbosstrainer.h"
 #include "trainer/spacecartrainer.h"
 #include "utils/processmonitor.h"
 
@@ -28,6 +29,7 @@ enum class TrainerType
     DairyScandal,
     PenguinPiles,
     SpaceCar,
+    SpaceCarBoss,
     DanceFloor,
     Hetoor
 };
@@ -52,6 +54,7 @@ private:
     DairyScandalTrainer *dairyScandalTrainer;
     PenguinPilesTrainer *penguinPilesTrainer;
     SpaceCarTrainer *spaceCarTrainer;
+    SpaceCarBossTrainer *spaceCarBossTrainer;
     DanceFloorTrainer *danceFloorTrainer;
     HetoorTrainer *hetoorTrainer;
     QMap<TrainerType, Trainer *> trainerSelector;

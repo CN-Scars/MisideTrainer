@@ -99,6 +99,17 @@ void MainWindow::onSpaceCarAlwaysFirstPlacePushButtonClicked()
     }
 }
 
+void MainWindow::onSpaceCarBossNeverHurtsYouPushButtonClicked()
+{
+    QPushButton *button = qobject_cast<QPushButton *>(sender());
+    bool success = trainerManager->useTrainer(TrainerType::SpaceCarBoss, button);
+    if (success)
+    {
+        pushButtonEnabled[button] = !pushButtonEnabled[button];
+        button->setText(pushButtonEnabled[button] ? tr("Disable") : tr("Enable"));
+    }
+}
+
 void MainWindow::onHetoorHealthLockPushButtonClicked()
 {
     QPushButton *button = qobject_cast<QPushButton *>(sender());
@@ -121,6 +132,7 @@ void MainWindow::initPushButton()
         {ui->decreaseMitaSnowballsPushButton, false},
         {ui->lockScoreOfMitaInDanceFloorPushButton, false},
         {ui->spaceCarAlwaysFirstPlacePushButton, false},
+        {ui->spaceCarBossNeverHurtsYouPushButton, false},
         {ui->hetoorHealthLockPushButton, false}};
 
     updatePushButtonText();
@@ -134,6 +146,7 @@ void MainWindow::initPushButtonConnections()
     connect(ui->decreaseMitaSnowballsPushButton, &QPushButton::clicked, this, &MainWindow::onDecreaseMitaSnowballsPushButtonClicked);
     connect(ui->lockScoreOfMitaInDanceFloorPushButton, &QPushButton::clicked, this, &MainWindow::onLockScoreOfMitaInDanceFloorPushButtonClicked);
     connect(ui->spaceCarAlwaysFirstPlacePushButton, &QPushButton::clicked, this, &MainWindow::onSpaceCarAlwaysFirstPlacePushButtonClicked);
+    connect(ui->spaceCarBossNeverHurtsYouPushButton, &QPushButton::clicked, this, &MainWindow::onSpaceCarBossNeverHurtsYouPushButtonClicked);
     connect(ui->hetoorHealthLockPushButton, &QPushButton::clicked, this, &MainWindow::onHetoorHealthLockPushButtonClicked);
 }
 
@@ -228,6 +241,7 @@ void MainWindow::initTextLabels()
         {ui->decreaseMitaSnowballsLabel, tr("Decrease the number of Mita's snowballs")},
         {ui->lockScoreOfMitaInDanceFloorLabel, tr("Lock the score of Cap-wearing Mita in Dance Floor")},
         {ui->spaceCarAlwaysFirstPlaceLabel, tr("Space Car: Always first place")},
+        {ui->spaceCarBossNeverHurtYouLabel, tr("Space Car: Boss never hurts you")},
         {ui->hetoorHealthLockLabel, tr("Hetoor health lock")}};
 
     for (auto it = labels.begin(); it != labels.end(); ++it)

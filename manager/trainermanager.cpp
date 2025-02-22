@@ -28,6 +28,7 @@ void TrainerManager::setUp(MainWindow *mainWindow)
     dairyScandalTrainer = new DairyScandalTrainer(monitor);
     penguinPilesTrainer = new PenguinPilesTrainer(monitor);
     spaceCarTrainer = new SpaceCarTrainer(monitor);
+    spaceCarBossTrainer = new SpaceCarBossTrainer(monitor);
     danceFloorTrainer = new DanceFloorTrainer(monitor);
     hetoorTrainer = new HetoorTrainer(monitor);
 
@@ -36,6 +37,7 @@ void TrainerManager::setUp(MainWindow *mainWindow)
     trainerSelector[TrainerType::DairyScandal] = dairyScandalTrainer;
     trainerSelector[TrainerType::PenguinPiles] = penguinPilesTrainer;
     trainerSelector[TrainerType::SpaceCar] = spaceCarTrainer;
+    trainerSelector[TrainerType::SpaceCarBoss] = spaceCarBossTrainer;
     trainerSelector[TrainerType::DanceFloor] = danceFloorTrainer;
     trainerSelector[TrainerType::Hetoor] = hetoorTrainer;
 }
