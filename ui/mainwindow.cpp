@@ -121,6 +121,17 @@ void MainWindow::onHetoorHealthLockPushButtonClicked()
     }
 }
 
+void MainWindow::onQuadRangleNoCollisionPushButtonClicked()
+{
+    QPushButton *button = qobject_cast<QPushButton *>(sender());
+    bool success = trainerManager->useTrainer(TrainerType::QuadRangle, button);
+    if (success)
+    {
+        pushButtonEnabled[button] = !pushButtonEnabled[button];
+        button->setText(pushButtonEnabled[button] ? tr("Disable") : tr("Enable"));
+    }
+}
+
 void MainWindow::initPushButton()
 {
     initPushButtonConnections();
@@ -133,7 +144,8 @@ void MainWindow::initPushButton()
         {ui->lockScoreOfMitaInDanceFloorPushButton, false},
         {ui->spaceCarAlwaysFirstPlacePushButton, false},
         {ui->spaceCarBossNeverHurtsYouPushButton, false},
-        {ui->hetoorHealthLockPushButton, false}};
+        {ui->hetoorHealthLockPushButton, false},
+        {ui->quadRangleNoCollisionPushButton, false}};
 
     updatePushButtonText();
 }
@@ -148,6 +160,7 @@ void MainWindow::initPushButtonConnections()
     connect(ui->spaceCarAlwaysFirstPlacePushButton, &QPushButton::clicked, this, &MainWindow::onSpaceCarAlwaysFirstPlacePushButtonClicked);
     connect(ui->spaceCarBossNeverHurtsYouPushButton, &QPushButton::clicked, this, &MainWindow::onSpaceCarBossNeverHurtsYouPushButtonClicked);
     connect(ui->hetoorHealthLockPushButton, &QPushButton::clicked, this, &MainWindow::onHetoorHealthLockPushButtonClicked);
+    connect(ui->quadRangleNoCollisionPushButton, &QPushButton::clicked, this, &MainWindow::onQuadRangleNoCollisionPushButtonClicked);
 }
 
 void MainWindow::initLanguageAction()
@@ -242,7 +255,8 @@ void MainWindow::initTextLabels()
         {ui->lockScoreOfMitaInDanceFloorLabel, tr("Lock the score of Cap-wearing Mita in Dance Floor")},
         {ui->spaceCarAlwaysFirstPlaceLabel, tr("Space Car: Always first place")},
         {ui->spaceCarBossNeverHurtYouLabel, tr("Space Car: Boss never hurts you")},
-        {ui->hetoorHealthLockLabel, tr("Hetoor health lock")}};
+        {ui->hetoorHealthLockLabel, tr("Hetoor health lock")},
+        {ui->quadRangleNoCollisionLabel, tr("Quad Rangle: No collision")}};
 
     for (auto it = labels.begin(); it != labels.end(); ++it)
     {

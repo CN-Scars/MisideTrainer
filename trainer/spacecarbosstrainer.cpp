@@ -4,7 +4,7 @@ SpaceCarBossTrainer::SpaceCarBossTrainer(ProcessMonitor *monitor) : Trainer(moni
 
 bool SpaceCarBossTrainer::applyModification()
 {
-    // 地址：GameAssembly.dll+4F6724，替换为 nop 指令
+    // 地址：GameAssembly.dll+4F6724，替换为 je
     uintptr_t patchAddress = moduleBase + 0x4F6724 + 1;
     qDebug() << L"Applying Space Car boss never hurts you at address: 0x" << patchAddress;
     BYTE patchBytes[1] = {0x84}; // je

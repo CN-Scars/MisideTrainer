@@ -9,8 +9,9 @@
 #include "trainer/dairyscandaltrainer.h"
 #include "trainer/dancefloortrainer.h"
 #include "trainer/gameconsoletrainer.h"
-#include "trainer/penguinpilestrainer.h"
 #include "trainer/hetoortrainer.h"
+#include "trainer/penguinpilestrainer.h"
+#include "trainer/quadrangletrainer.h"
 #include "trainer/spacecarbosstrainer.h"
 #include "trainer/spacecartrainer.h"
 #include "utils/processmonitor.h"
@@ -31,7 +32,8 @@ enum class TrainerType
     SpaceCar,
     SpaceCarBoss,
     DanceFloor,
-    Hetoor
+    Hetoor,
+    QuadRangle
 };
 
 class TrainerManager : public QObject
@@ -57,6 +59,7 @@ private:
     SpaceCarBossTrainer *spaceCarBossTrainer;
     DanceFloorTrainer *danceFloorTrainer;
     HetoorTrainer *hetoorTrainer;
+    QuadRangleTrainer *quadRangleTrainer;
     QMap<TrainerType, Trainer *> trainerSelector;
 
     bool onTrainerButtonClicked(Trainer *trainer, QPushButton *button); // 通用修改器按钮点击事件处理

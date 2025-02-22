@@ -31,6 +31,7 @@ void TrainerManager::setUp(MainWindow *mainWindow)
     spaceCarBossTrainer = new SpaceCarBossTrainer(monitor);
     danceFloorTrainer = new DanceFloorTrainer(monitor);
     hetoorTrainer = new HetoorTrainer(monitor);
+    quadRangleTrainer = new QuadRangleTrainer(monitor);
 
     trainerSelector[TrainerType::AlternativeMenu] = alternativeMenuTrainer;
     trainerSelector[TrainerType::GameConsole] = gameConsoleTrainer;
@@ -40,6 +41,7 @@ void TrainerManager::setUp(MainWindow *mainWindow)
     trainerSelector[TrainerType::SpaceCarBoss] = spaceCarBossTrainer;
     trainerSelector[TrainerType::DanceFloor] = danceFloorTrainer;
     trainerSelector[TrainerType::Hetoor] = hetoorTrainer;
+    trainerSelector[TrainerType::QuadRangle] = quadRangleTrainer;
 }
 
 bool TrainerManager::useTrainer(TrainerType type, QPushButton *button)

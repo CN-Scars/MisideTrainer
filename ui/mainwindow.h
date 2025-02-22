@@ -60,6 +60,8 @@ private slots:
 
     void onHetoorHealthLockPushButtonClicked();
 
+    void onQuadRangleNoCollisionPushButtonClicked();
+
 private:
     Ui::MainWindow *ui;
     QTranslator *appTranslator = nullptr;
