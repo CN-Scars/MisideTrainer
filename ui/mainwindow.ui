@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>401</width>
-    <height>630</height>
+    <width>480</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QGroupBox" name="gameDetectionGroupBox">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>60</y>
+      <x>270</x>
+      <y>10</y>
       <width>191</width>
       <height>90</height>
      </rect>
@@ -50,10 +50,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>160</y>
-      <width>341</width>
-      <height>361</height>
+      <x>20</x>
+      <y>120</y>
+      <width>441</width>
+      <height>531</height>
      </rect>
     </property>
     <property name="title">
@@ -64,8 +64,8 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>321</width>
-       <height>331</height>
+       <width>411</width>
+       <height>501</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -354,8 +354,8 @@
    <widget class="QLabel" name="pictureLabel">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>50</y>
+      <x>20</x>
+      <y>10</y>
       <width>121</width>
       <height>91</height>
      </rect>
@@ -370,7 +370,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>401</width>
+     <width>480</width>
      <height>25</height>
     </rect>
    </property>

@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     MainWindow w;
     w.setWindowIcon(QIcon(":/icons/app_icon.ico"));
-    w.setFixedSize(400, 600);
+    w.setFixedSize(480, 720);
     w.setWindowTitle("MisideFull Trainer");
     w.show();
     return a.exec();
